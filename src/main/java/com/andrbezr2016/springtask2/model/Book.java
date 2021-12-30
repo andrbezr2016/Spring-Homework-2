@@ -18,7 +18,7 @@ public class Book {
     private String title;
 
     @Column(name = "b_price", nullable = false)
-    private double price;
+    private int price;
 
     @Column(name = "b_storage", nullable = false)
     private String storage;
