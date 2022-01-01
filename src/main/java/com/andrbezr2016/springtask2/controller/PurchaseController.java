@@ -32,7 +32,7 @@ public class PurchaseController {
     }
 
     @PostMapping
-    public Purchase addPurchase(@RequestBody Purchase newPurchase) {
+    public Purchase addPurchase(@RequestBody Purchase newPurchase) throws ResourceNotFoundException {
         return service.add(newPurchase);
     }
 

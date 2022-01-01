@@ -1,5 +1,6 @@
 package com.andrbezr2016.springtask2.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -31,5 +32,6 @@ public class Purchase {
     private int quantity;
 
     @Column(name = "p_sum", nullable = false)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int sum;
 }

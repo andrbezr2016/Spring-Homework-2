@@ -14,13 +14,13 @@ public class Book {
     @Column(name = "b_id", nullable = false)
     private int id;
 
-    @Column(name = "b_title", nullable = false)
+    @Column(name = "b_title", length = 50, nullable = false)
     private String title;
 
     @Column(name = "b_price", nullable = false)
     private int price;
 
-    @Column(name = "b_storage", nullable = false)
+    @Column(name = "b_storage", length = 50, nullable = false)
     private String storage;
 
     @Column(name = "b_quantity", nullable = false)

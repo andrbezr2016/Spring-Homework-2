@@ -14,10 +14,10 @@ public class Store {
     @Column(name = "s_id", nullable = false)
     private int id;
 
-    @Column(name = "s_title", nullable = false)
+    @Column(name = "s_title", length = 50, nullable = false)
     private String title;
 
-    @Column(name = "s_location", nullable = false)
+    @Column(name = "s_location", length = 50, nullable = false)
     private String location;
 
     @Column(name = "s_commission", nullable = false)
