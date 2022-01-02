@@ -50,4 +50,14 @@ public class StoreController {
     public Store replaceStore(@PathVariable(value = "id") Integer id, @RequestBody Store newStore) throws ResourceNotFoundException {
         return service.replace(id, newStore);
     }
+
+    @GetMapping("sovetsky")
+    public List<String> getSovetskyStores() {
+        return service.getByLocation("Sovetsky");
+    }
+
+    @GetMapping("sormovsky")
+    public List<String> getSormovskyStores() {
+        return service.getByLocation("Sormovsky");
+    }
 }

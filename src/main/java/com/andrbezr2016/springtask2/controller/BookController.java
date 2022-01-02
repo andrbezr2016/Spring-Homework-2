@@ -50,4 +50,14 @@ public class BookController {
     public Book replaceBook(@PathVariable(value = "id") Integer id, @RequestBody Book newBook) throws ResourceNotFoundException {
         return service.replace(id, newBook);
     }
+
+    @GetMapping("titles-and-prices")
+    public List<Object[]> getBooksTitlesAndPrices() {
+        return service.getTitlesAndPrices();
+    }
+
+    @GetMapping("windows-or-20000")
+    public List<Object[]> getBooksWhere() {
+        return service.getWhere("Windows", 20000);
+    }
 }

@@ -96,4 +96,8 @@ public class PurchaseService {
         purchase.setSum(calculateSum(newBook, newPurchase));
         return repository.save(purchase);
     }
+
+    public List<String> getMonths() {
+        return repository.findMonths();
+    }
 }

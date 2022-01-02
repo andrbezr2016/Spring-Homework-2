@@ -50,4 +50,9 @@ public class PurchaseController {
     public Purchase replacePurchase(@PathVariable(value = "id") Integer id, @RequestBody Purchase newPurchase) throws ResourceNotFoundException {
         return service.replace(id, newPurchase);
     }
+
+    @GetMapping("months")
+    public List<String> getPurchaseMonths() {
+        return service.getMonths();
+    }
 }

@@ -21,7 +21,7 @@ public class StoreService {
 
     public Store update(Integer id, Store newStore) throws ResourceNotFoundException {
         Store store = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Store not found for id: " + id));
-        if (newStore.getTitle() != null) store.setTitle(newStore.getTitle());
+        if (newStore.getName() != null) store.setName(newStore.getName());
         if (newStore.getLocation() != null) store.setLocation(newStore.getLocation());
         if (newStore.getCommission() != 0) store.setCommission(newStore.getCommission());
         return repository.save(store);
@@ -41,9 +41,13 @@ public class StoreService {
 
     public Store replace(Integer id, Store newStore) throws ResourceNotFoundException {
         Store store = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Store not found for id: " + id));
-        store.setTitle(newStore.getTitle());
+        store.setName(newStore.getName());
         store.setLocation(newStore.getLocation());
         store.setCommission(newStore.getCommission());
         return repository.save(store);
+    }
+
+    public List<String> getByLocation(String district) {
+        return repository.findByLocation(district);
     }
 }

@@ -48,4 +48,12 @@ public class BookService {
         book.setQuantity(newBook.getQuantity());
         return repository.save(book);
     }
+
+    public List<Object[]> getTitlesAndPrices() {
+        return repository.findTitleAndPrices();
+    }
+
+    public List<Object[]> getWhere(String word, Integer price) {
+        return repository.findWhere(word, price);
+    }
 }

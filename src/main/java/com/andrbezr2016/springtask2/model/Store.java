@@ -14,8 +14,8 @@ public class Store {
     @Column(name = "s_id", nullable = false)
     private int id;
 
-    @Column(name = "s_title", length = 50, nullable = false)
-    private String title;
+    @Column(name = "s_name", length = 50, nullable = false)
+    private String name;
 
     @Column(name = "s_location", length = 50, nullable = false)
     private String location;

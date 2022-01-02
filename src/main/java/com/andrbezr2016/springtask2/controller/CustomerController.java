@@ -50,4 +50,14 @@ public class CustomerController {
     public Customer replaceCustomer(@PathVariable(value = "id") Integer id, @RequestBody Customer newCustomer) throws ResourceNotFoundException {
         return service.replace(id, newCustomer);
     }
+
+    @GetMapping("districts")
+    public List<String> getCustomersDistricts() {
+        return service.getDistricts();
+    }
+
+    @GetMapping("nizhegorodsky")
+    public List<Object[]> getNizhegorodskyCustomers() {
+        return service.getByResidence("Nizhegorodsky");
+    }
 }

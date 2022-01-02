@@ -46,4 +46,12 @@ public class CustomerService {
         customer.setSale(newCustomer.getSale());
         return repository.save(customer);
     }
+
+    public List<String> getDistricts() {
+        return repository.findDistricts();
+    }
+
+    public List<Object[]> getByResidence(String district) {
+        return repository.findByResidence(district);
+    }
 }
