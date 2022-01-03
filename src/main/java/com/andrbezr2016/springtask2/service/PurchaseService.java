@@ -100,4 +100,20 @@ public class PurchaseService {
     public List<String> getMonths() {
         return repository.findMonths();
     }
+
+    public List<Object[]> getCustomersAndStores() {
+        return repository.findCustomersAndStores();
+    }
+
+    public List<Object[]> getCustomersAndBooks() {
+        return repository.findCustomersAndBooks();
+    }
+
+    public List<Object[]> getSumGreaterOrEqualThan60000() {
+        return repository.findSumGreaterOrEqualThan60000();
+    }
+
+    public List<Object[]> getInTheSameDistrict() {
+        return repository.findInTheSameDistrict();
+    }
 }

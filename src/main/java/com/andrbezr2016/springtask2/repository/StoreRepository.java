@@ -13,4 +13,7 @@ public interface StoreRepository extends JpaRepository<Store, Integer> {
 
     @Query(value = "select s_name from store where s_location = :district", nativeQuery = true)
     List<String> findByLocation(@Param("district") String district);
+
+    @Query(value = "select distinct s.s_name from store s join purchase p on (s.s_id = p.p_store and s.s_location <> 'Avtozavodsky') join customer c on (c.c_id = p.p_customer and c.c_sale between 10 and 15)", nativeQuery = true)
+    List<String> findCustomersWithSaleBetween10And15();
 }

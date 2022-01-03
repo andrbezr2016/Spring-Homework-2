@@ -53,7 +53,11 @@ public class BookService {
         return repository.findTitleAndPrices();
     }
 
-    public List<Object[]> getWhere(String word, Integer price) {
-        return repository.findWhere(word, price);
+    public List<Object[]> getWindowsOr20000() {
+        return repository.findWindowsOr20000();
+    }
+
+    public List<Object[]> getPurchasedInfo() {
+        return repository.findPurchasedInfo();
     }
 }

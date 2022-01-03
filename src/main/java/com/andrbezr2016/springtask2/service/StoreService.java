@@ -1,9 +1,11 @@
 package com.andrbezr2016.springtask2.service;
 
 import com.andrbezr2016.springtask2.exception.ResourceNotFoundException;
+import com.andrbezr2016.springtask2.model.Book;
 import com.andrbezr2016.springtask2.model.Store;
 import com.andrbezr2016.springtask2.repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -49,5 +51,9 @@ public class StoreService {
 
     public List<String> getByLocation(String district) {
         return repository.findByLocation(district);
+    }
+
+    public List<String> getCustomersWithSaleBetween10And15() {
+        return repository.findCustomersWithSaleBetween10And15();
     }
 }
